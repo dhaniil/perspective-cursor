@@ -5,15 +5,6 @@ Proyek ini mendemonstrasikan efek perspektif dinamis pada gambar menggunakan HTM
 ## Fitur
 
 - Efek perspektif 3D yang merespons gerakan mouse
-- Transisi halus saat pergerakan mouse
-- Efek bayangan yang meningkat saat hover
-- Tata letak responsif dengan CSS Grid
-
-## Teknologi yang Digunakan
-
-- HTML5
-- CSS3 (Transform 3D, Custom Properties)
-- JavaScript (Event Handling)
 
 ## Cara Kerja
 
