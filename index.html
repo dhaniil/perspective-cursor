@@ -1,0 +1,41 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" 
+        content="ie=edge">
+    <title>Efek Perspektif Dinamis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="https://static.wikitide.net/bluearchivewiki/e/eb/BG_CS_PV4_006.jpg">
+        <img src="https://static.wikitide.net/bluearchivewiki/9/91/BG_CS_PV4_157.jpg">
+        <img src="https://static.wikitide.net/bluearchivewiki/5/53/BG_CS_PV4_073.jpg">
+    </div>
+
+    <script>
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('mousemove', (e) => {
+                const posisi = img.getBoundingClientRect();
+                const x = e.clientX - posisi.left;
+                const y = e.clientY - posisi.top;
+                const tengahX = posisi.width / 2;
+                const tengahY = posisi.height / 2;
+                const offsetX = (x - tengahX) / tengahX;
+                // const offsetY = (y - tengahY) / tengahY;
+                    img.style.setProperty('--mouse-x', offsetX.toFixed(2));
+                    img.style.setProperty('--mouse-y', offsetY.toFixed(2));
+            });
+
+            img.addEventListener('mouseleave', () => {
+                img.style.setProperty('--mouse-x', 0);
+                img.style.setProperty('--mouse-y', 0);
+            });
+        });
+    </script>
+</body>
+</html>
